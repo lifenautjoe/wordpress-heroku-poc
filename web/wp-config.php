@@ -18,25 +18,45 @@
  * @package WordPress
  */
 
-$db_url = parse_url(getenv("DATABASE_URL"));
 
-$db_host = $db_url["host"];
-$db_username = $db_url["user"];
-$db_password = $db_url["pass"];
-$db_name = substr($db_url["path"], 1);
+$root_dir = __DIR__. '/../';
+
+require($root_dir . 'vendor/autoload.php');
+
+$dotenv = new Dotenv\Dotenv($root_dir);
+$dotenv->load();
+
+$DB_URL = getenv("DATABASE_URL");
+
+if($DB_URL){
+    $DB = array(
+        'host' => $DB_URL["host"],
+        'username' => $DB_URL["user"],
+        'password' => $DB_URL["pass"],
+        'name' => substr($DB_URL["path"], 1)
+    );
+} else{
+    $DB = array(
+        'host' => getenv("DATABASE_HOST"),
+        'username' => getenv("DATABASE_USERNAME"),
+        'password' => getenv("DATABASE_PASSWORD"),
+        'name' => getenv("DATABASE_NAME")
+    );
+}
+
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', $db_name);
+define('DB_NAME', $DB['name']);
 
 /** MySQL database username */
-define('DB_USER', $db_username);
+define('DB_USER', $DB['username']);
 
 /** MySQL database password */
-define('DB_PASSWORD', $db_password);
+define('DB_PASSWORD', $DB['password']);
 
 /** MySQL hostname */
-define('DB_HOST', $db_host);
+define('DB_HOST', $DB['host']);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -84,7 +104,7 @@ $table_prefix  = 'wp_lifenautjoe_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* That's all, stop editing! Happy blogging. */
 
