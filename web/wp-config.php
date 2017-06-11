@@ -19,7 +19,7 @@
  */
 
 
-$root_dir = __DIR__. '/../';
+$root_dir = __DIR__ . '/../';
 
 require($root_dir . 'vendor/autoload.php');
 
@@ -28,7 +28,7 @@ $dotenv->load();
 
 $DB_URL = getenv("DATABASE_URL");
 
-if($DB_URL){
+if ($DB_URL) {
     $DB_URL = parse_url($DB_URL);
 
     $DB = array(
@@ -37,7 +37,7 @@ if($DB_URL){
         'password' => $DB_URL["pass"],
         'name' => substr($DB_URL["path"], 1)
     );
-} else{
+} else {
     $DB = array(
         'host' => getenv("DATABASE_HOST"),
         'username' => getenv("DATABASE_USERNAME"),
@@ -45,6 +45,17 @@ if($DB_URL){
         'name' => getenv("DATABASE_NAME")
     );
 }
+
+$WP_AUTH_KEY = getenv("WP_AUTH_KEY");
+$WP_SECURE_AUTH_KEY = getenv("WP_SECURE_AUTH_KEY");
+$WP_LOGGED_IN_KEY = getenv("WP_LOGGED_IN_KEY");
+$WP_NONCE_KEY = getenv("WP_NONCE_KEY");
+$WP_AUTH_SALT = getenv("WP_AUTH_SALT");
+$WP_SECURE_AUTH_SALT = getenv("WP_SECURE_AUTH_SALT");
+$WP_LOGGED_IN_SALT = getenv("WP_LOGGED_IN_SALT");
+$WP_NONCE_SALT = getenv("WP_NONCE_SALT");
+
+$WP_DEBUG = getenv("WP_DEBUG") === "true";
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -74,14 +85,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         ':,?$6CFc/}<I85UxyaMy(:[Z|meu fOX-Q7CS<twUM|mtkRR0&>06_@utjFN#yH-');
-define('SECURE_AUTH_KEY',  'Y53h|#{/X^/vUY@A(YjY+ :QY1YmJ&M<s|jep|w:Y_$Ksfj?-B8tf+WY(M(j-KU/');
-define('LOGGED_IN_KEY',    'C,P:;eg-H<<gW<=HVW*Bw~g>)I$@x>%3*k(0v$b@u.^*Ab_Ge(WyV{ ?*w{!6Z`L');
-define('NONCE_KEY',        'D>X%A,( UnYI|![}Yjx~z9wjQAmMMJ+UC2i?`$=|W6$kDKc?#=j9xsQanR#<JG|<');
-define('AUTH_SALT',        'C^~uVt[+<CqxKCi9I{Hxy:be5#=JZk>hpc)~Cx78T@ EFJa{?83647-+>GZvW{A`');
-define('SECURE_AUTH_SALT', 'cEsC<6Rr%}%+T1jdznf<mbgQ*sDrFKJ,bAE:35;>&rqOPd+]EFj!~T$%9,Q@JCk`');
-define('LOGGED_IN_SALT',   'j-SZ3T^^MK0:WtzRiK-F!c9>Hf*{MT|NM6AJkB E7NijF7Byxi(_`/b+mJ98F#:G');
-define('NONCE_SALT',       '^TJ&|usW,L<RwQ--|4Q0!ZB$Bo`Z~MgqJa/JoFnK3u4A8b F_!l;$6Q+;oJ]2*9l');
+define('AUTH_KEY', $WP_AUTH_KEY);
+define('SECURE_AUTH_KEY', $WP_SECURE_AUTH_KEY);
+define('LOGGED_IN_KEY', $WP_LOGGED_IN_KEY);
+define('NONCE_KEY', $WP_NONCE_KEY);
+define('AUTH_SALT', $WP_AUTH_SALT);
+define('SECURE_AUTH_SALT', $WP_SECURE_AUTH_SALT);
+define('LOGGED_IN_SALT', $WP_LOGGED_IN_SALT);
+define('NONCE_SALT', $WP_NONCE_SALT);
 
 /**#@-*/
 
@@ -91,7 +102,7 @@ define('NONCE_SALT',       '^TJ&|usW,L<RwQ--|4Q0!ZB$Bo`Z~MgqJa/JoFnK3u4A8b F_!l;
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_lifenautjoe_';
+$table_prefix = 'wp_lifenautjoe_';
 
 /**
  * For developers: WordPress debugging mode.
@@ -105,13 +116,13 @@ $table_prefix  = 'wp_lifenautjoe_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', $WP_DEBUG);
 
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+if (!defined('ABSPATH'))
+    define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
