@@ -18,7 +18,6 @@
  * @package WordPress
  */
 
-
 $root_dir = __DIR__ . '/../';
 
 require($root_dir . 'vendor/autoload.php');
