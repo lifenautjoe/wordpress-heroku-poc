@@ -29,6 +29,8 @@ $dotenv->load();
 $DB_URL = getenv("DATABASE_URL");
 
 if($DB_URL){
+    $DB_URL = parse_url($DB_URL);
+
     $DB = array(
         'host' => $DB_URL["host"],
         'username' => $DB_URL["user"],
@@ -43,8 +45,6 @@ if($DB_URL){
         'name' => getenv("DATABASE_NAME")
     );
 }
-
-fwrite(STDOUT, 'DATABASE DETAILS' . var_dump($DB));
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
