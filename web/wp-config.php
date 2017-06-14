@@ -56,6 +56,8 @@ $WP_NONCE_SALT = getenv("WP_NONCE_SALT");
 
 $WP_DEBUG = getenv("WP_DEBUG") === "true";
 
+define('FORCE_SSL_ADMIN', true);
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', $DB['name']);
