@@ -104,6 +104,13 @@ define('NONCE_SALT', $WP_NONCE_SALT);
 /**#@-*/
 
 /**
+ * amazon-web-services plugin
+ */
+
+define( 'DBI_AWS_ACCESS_KEY_ID', $AWS_ACCESS_KEY_ID );
+define( 'DBI_AWS_SECRET_ACCESS_KEY', $AWS_SECRET_ACCESS_KEY );
+
+/**
  * WordPress Database Table prefix.
  *
  * You can have multiple installations in one database if you give each
