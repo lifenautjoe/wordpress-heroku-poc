@@ -1,6 +1,7 @@
 {
   "require": {
-    "vlucas/phpdotenv": "^2.4"
+    "vlucas/phpdotenv": "^2.4",
+    "wp-cli/wp-cli": "^1.2"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
