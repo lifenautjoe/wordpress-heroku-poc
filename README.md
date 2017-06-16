@@ -39,7 +39,7 @@ Althought most sites won't ever require an E-Commerce solution, some of them wil
 Install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
 ```sh
-$ git clone git@github.com:heroku/php-getting-started.git # or clone your own fork
+$ git clone git@github.com:lifenautjoe/wordpress-heroku-poc.git # or clone your own fork
 $ cd wordpress-heroku-poc
 $ heroku create
 $ git push heroku master
