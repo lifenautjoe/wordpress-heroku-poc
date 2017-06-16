@@ -10,7 +10,7 @@
   * [Configuring](#configuring)
   * [Conclusion](#conclusion)
   * [Alternatives](#alternatives)
-  * [More information or questions?](#more-information-or-questions-)
+  * [More information or questions](#more-information-or-questions)
 
 ## What
 
@@ -70,7 +70,7 @@ So if you're building a site for yourself and are considering Wordpress and Hero
 I'm currently doing a POC with [DigitalOcean](www.digitalocean.com) and will write about it once I have a veredict. Seems pretty good so far!
 
 
-## More information or questions?
+## More information or questions
 
 I'm setting up a blog where I'll write more about the outcome and for questions, feel free to open an issue and I'll reply asap.
 
