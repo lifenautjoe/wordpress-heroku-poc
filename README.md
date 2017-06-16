@@ -1,28 +1,56 @@
-# php-getting-started
+# wordpress-heroku-poc
 
-A barebones PHP app that makes use of the [Silex](http://silex.sensiolabs.org/) web framework, which can easily be deployed to Heroku.
+**What?**
 
-This application supports the [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php) article - check it out.
+A proof of concept for getting a typical freelanced Wordpress site on the [heroku](www.heroku.com) platform.
 
-## Deploying
+**Why?**
+
+I'm currently in the process of funding a software company and website development being a major part of it I want to ensure picking the best platform for my customers and our developers. Having tried Amazon ElasticBeanstalk, it's Heroku's turn.
+
+## Included plugins
+
+### amazon-s3-and-cloudfront
+
+**Why?** 
+
+Herokus storage is ephemeral. As in everytime you do a new deploy the files that you deploy get placed on a brand new "dyno". Wordpress stores media content on the file system. This plugin uploads the media to Amazons S3 service (The cloud) instead and links to them(Most of the time), meaning that if our wp-content directory is wiped out after a deploy, our media content will still be available.
+
+### woocommerce
+
+**Why?** 
+
+Althought most sites won't ever require an E-Commerce solution, some of them will and we must be confident that we will be able to deliver with our chosen platform.  
+
+## Running
 
 Install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 
 ```sh
 $ git clone git@github.com:heroku/php-getting-started.git # or clone your own fork
-$ cd php-getting-started
+$ cd wordpress-heroku-poc
 $ heroku create
 $ git push heroku master
+```
+### Configuring
+
+**Local**
+Copy the .env.sample as .env with your configuration.
+
+**Heroku**
+
+Open the Heroku application dashboard.
+```sh
 $ heroku open
 ```
+Add all of the .env.sample variables into your heroku config variables with your configuration.
 
-or
+## POC Result
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+Wordpress and Heroku? **Don't.**
 
-## Documentation
 
-For more information about using PHP on Heroku, see these Dev Center articles:
+## More information or questions?
 
-- [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php)
-- [PHP on Heroku](https://devcenter.heroku.com/categories/php)
+I'm setting up a blog where I'll write more about the outcome and for questions, feel free to open an issue and I'll reply asap.
+
