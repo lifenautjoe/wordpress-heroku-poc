@@ -18,7 +18,7 @@ A proof of concept for getting a typical freelanced Wordpress site on the [herok
 
 ## Why
 
-I'm currently in the process of funding a software company and website development being a major part of it I want to ensure picking the best platform for my customers and our developers. Having tried Amazon ElasticBeanstalk, it's Heroku's turn.
+I'm currently in the process of funding a software company and website development being a major part of it I want to ensure picking the best platform for our customers and developers. Having tried Amazon ElasticBeanstalk, it's Heroku's turn.
 
 ## Included plugins
 
