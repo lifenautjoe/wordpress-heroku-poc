@@ -61,9 +61,9 @@ Add all of the .env.sample variables into your heroku config variables with your
 
 TLDR; **Don't do it.**
 
-Wordpress and it's massive community of developers rely heavily in the file system for storing media, saving configuration files, caching and more. Hosting it in an ephemeral file system platform such as Heroku or Amazon ElasticBeanstalk is jumping into a sea of uncertainties. And yes, while there are plugins and **developers** that claim to have done it, it's either by purchashing costly plugins and subscriptions or using open source software that might cease to be mantained tomorrow, and both solutions **will NEVER work fully**. There's thousands of plugins out there and they all rely on the idea that Wordpress and it's content are persistent, there are no guarantees your site won't break down after installig a new plugin or restarting your machine. 
+Wordpress and it's massive community of developers rely heavily in the file system for storing media, saving configuration files, caching and more. Hosting it in an ephemeral file system platform such as Heroku or Amazon ElasticBeanstalk is jumping into a sea of uncertainties. And yes, while there are plugins and **developers** that claim to have done it, it's either by purchashing costly plugins and subscriptions or using open source software that might cease to be mantained tomorrow, and both solutions **will NEVER work fully**. There's thousands of plugins out there and they all rely on the idea that Wordpress and it's content are persistent, there are no guarantees your site won't break down after installing a new plugin or restarting your machine. 
 
-So if you're building a site for yourself and are considering Wordpress and Heroku, save yourself the trouble. If you're building a site for someone else, be professional and build with the best option available, Heroku clearly not being it.
+So if you're building a site for yourself and are considering Wordpress and Heroku, save yourself the trouble. If you're building a site for someone else, be professional and build it in the the best platform available for it, Heroku clearly not being it.
 
 ## Alternatives
 
