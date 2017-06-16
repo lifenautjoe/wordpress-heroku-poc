@@ -10,7 +10,7 @@
   * [Configuring](#configuring)
   * [Conclusion](#conclusion)
   * [Alternatives](#alternatives)
-  * [More information or questions](#more-information-or-questions)
+  * [Questions or thanks](#questions-or-thanks)
 
 ## What
 
@@ -63,14 +63,19 @@ TLDR; **Don't do it.**
 
 Wordpress and it's massive community of developers rely heavily in the file system for storing media, saving configuration files, caching and more. Hosting it in an ephemeral file system platform such as Heroku or Amazon ElasticBeanstalk is jumping into a sea of uncertainties. And yes, while there are plugins and **developers** that claim to have done it, it's either by purchashing costly plugins and subscriptions or using open source software that might cease to be mantained tomorrow, and both solutions **will NEVER work fully**. There's thousands of plugins out there and they all rely on the idea that Wordpress and it's content are persistent, there are no guarantees your site won't break down after installing a new plugin or restarting your machine. 
 
-So if you're building a site for yourself and are considering Wordpress and Heroku, save yourself the trouble. If you're building a site for someone else, be professional and build it in the the best platform available for it, Heroku clearly not being it.
+So what really happened? Well, with a small number of plugins compared to a production wordpress site, the site worked but was VERY unstable. A restart of the server deleted configuration files created by wordpress itself which resulted in 404 of pages as well as removed the possibility of cropping previously uploaded images and a dozen tiny things which altogether are a big NOPE. On the WooCommerce part, the amazon-s3-and-cloudfront requires a "premium" subscription of around 50 USD to even try to get it to work so it was an inmediate nope from me. Not because I don't have 50 dollars to spare on such a thing but because I refuse to pay for something I'm not confident will work out.
+
+So, to conclude, if you're building a site for yourself and are considering Wordpress and Heroku, save yourself the trouble. If you're building a site for someone else, be professional and build it in the the best platform available for it, Heroku clearly not being it.
 
 ## Alternatives
 
 I'm currently doing a POC with [DigitalOcean](www.digitalocean.com) and will write about it once I have a veredict. Seems pretty good so far!
 
 
-## More information or questions
+## Questions or thanks
 
-I'm setting up a blog where I'll write more about the outcome and for questions, feel free to open an issue and I'll reply asap.
+If I still haven't convinced you and want to ask some more questions or if I saved you hours of frustation and would like to say thanks, let me know! Drop me a tweet at [@lifenautjoe](https://twitter.com/lifenautjoe) or in my [Instagram account](https://instagram.com/lifenautjoe).
+
+I'm also setting up a blog so those are also the best channels to stay informed about it!
+
 
