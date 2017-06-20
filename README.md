@@ -71,7 +71,7 @@ So, to conclude, if you're building a site for yourself and are considering Word
 
 I'm currently doing a POC with [DigitalOcean](www.digitalocean.com) and will write about it once I have a veredict. Seems pretty good so far!
 
-**UPDATE: ** Go for it! You can set up the entire thing from scratch using a 5 dollars per month droplet (Apache, PHP and WordPress) or you can use the one click install wordpress image in a 10 dollars per month droplet. I'm currently running www.lifenautjoe.com on the latter.
+**UPDATE:** Go for it! You can set up the entire thing from scratch using a 5 dollars per month droplet (Apache, PHP and WordPress) or you can use the one click install wordpress image in a 10 dollars per month droplet. I'm currently running www.lifenautjoe.com on the latter.
 
 
 ## Questions or thanks
